@@ -95,8 +95,8 @@ export default function Home() {
 
   const askAI = async () => {
     if (!aiPrompt.trim()) return
+    setAiSuggestion([])
     setAiLoading(true)
-    setAiSuggestions([])
     try {
       const res = await fetch("/api/generate", {
         method: "POST",
